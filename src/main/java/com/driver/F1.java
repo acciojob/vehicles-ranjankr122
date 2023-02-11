@@ -3,6 +3,7 @@ package com.driver;
 public class F1 extends Car {
 
 
+
     @Override
     public void setWheels(int wheels) {
         super.setWheels(wheels);
@@ -38,9 +39,9 @@ public class F1 extends Car {
         super.setSeats(seats);
     }
 
-    public F1(String name, int wheels, int doors, int gears, boolean isManual, String type, int seats) {
-        super(name, wheels, doors, gears, isManual, type, seats);
-    }
+//    public F1(String name, int wheels, int doors, int gears, boolean isManual, String type, int seats) {
+//        super(name, wheels, doors, gears, isManual, type, seats);
+//    }
 
     @Override
     public void changeGear(int newGear) {
@@ -58,8 +59,8 @@ public class F1 extends Car {
     }
 
     @Override
-    public void setName() {
-        super.setName();
+    public void setName(String name) {
+        super.setName(name);
     }
 
     @Override
@@ -98,14 +99,15 @@ public class F1 extends Car {
     }
 
     public F1(String name, boolean isManual) {
-
         super(name,isManual);
+
         //Use arbitrary values for parameters which are not mentioned
     }
 
     public void accelerate(int rate){
         int newSpeed = 0; //set the value of new speed by using currentSpeed and rate
         newSpeed =getCurrentSpeed() +rate;
+        setCurrentSpeed(newSpeed);
         /**
          * speed 0: gear 1
          * speed 1-50: gear 1
